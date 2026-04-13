@@ -1,0 +1,48 @@
+
+[
+
+{ 
+    "id" : 1, 
+    "name" : "Heart", 
+    "symbol" : "\u2665", 
+    "color": "red"
+
+
+}, 
+
+{ 
+
+    "id": 2,
+    "name": "Club",
+    "symbol": "\u2663",
+    "color": "black"
+
+
+}, 
+
+
+{ 
+
+    "id": 3,
+    "name": "Spade",
+    "symbol": "\u2660",
+    "color": "black"
+
+
+}, 
+
+
+
+{ 
+
+    "id": 4,
+    "name": "Diamond",
+    "symbol": "\u2666",
+    "color": "red"
+
+
+}
+
+
+
+] 
