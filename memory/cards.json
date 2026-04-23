@@ -1,0 +1,24 @@
+[
+  { "id": 1, "name": "Heart", "symbol": "♥" },
+  { "id": 2, "name": "Club", "symbol": "♣" },
+  { "id": 3, "name": "Spade", "symbol": "♠" },
+  { "id": 4, "name": "Diamond", "symbol": "♦" },
+
+  { "id": 5, "name": "Star", "symbol": "★" },
+  { "id": 6, "name": "Circle", "symbol": "●" },
+  { "id": 7, "name": "Triangle", "symbol": "▲" },
+  { "id": 8, "name": "Square", "symbol": "■" },
+
+  { "id": 9, "name": "Plus", "symbol": "✚" },
+  { "id": 10, "name": "Cross", "symbol": "✖" },
+  { "id": 11, "name": "Hexagon", "symbol": "⬢" },
+  { "id": 12, "name": "DiamondSmall", "symbol": "◆" },
+
+  { "id": 13, "name": "Arrow", "symbol": "➤" },
+  { "id": 14, "name": "Infinity", "symbol": "∞" },
+  { "id": 15, "name": "Target", "symbol": "◎" },
+  { "id": 16, "name": "Ring", "symbol": "◯" },
+
+  { "id": 17, "name": "OutlineDiamond", "symbol": "◇" },
+{ "id": 18, "name": "OutlineStar", "symbol": "☆" }
+]
