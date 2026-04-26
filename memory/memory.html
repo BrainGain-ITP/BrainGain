@@ -43,10 +43,13 @@
 
       <div id="memoryGrid" class="memory-grid"></div>
 
-      <div id="winMessage" class="win-message hidden">
-        <h3>Well done!</h3>
-        <p>You matched all pairs.</p>
-        <p id="finalStats"></p>
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-card">
+          <h3 id="overlay-title">Well done!</h3>
+          <p id="overlay-text">You matched all pairs.</p>
+          <p id="finalStats"></p>
+          <button id="playAgainBtn" class="primary-btn">Play Again</button>
+        </div>
       </div>
     </section>
   </main>

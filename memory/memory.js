@@ -2,8 +2,11 @@ const memoryGrid = document.getElementById("memoryGrid");
 const movesDisplay = document.getElementById("moves");
 const timerDisplay = document.getElementById("timer");
 const restartBtn = document.getElementById("restartBtn");
-const winMessage = document.getElementById("winMessage");
+const overlay = document.getElementById("overlay");
+const overlayTitle = document.getElementById("overlay-title");
+const overlayText = document.getElementById("overlay-text");
 const finalStats = document.getElementById("finalStats");
+const playAgainBtn = document.getElementById("playAgainBtn");
 const levelButtons = document.querySelectorAll(".level-btn");
 
 const levels = {
@@ -106,7 +109,7 @@ function resetGameState() {
 
   movesDisplay.textContent = "Moves: 0";
   timerDisplay.textContent = "Time: 0s";
-  winMessage.classList.add("hidden");
+  hideOverlay();
 }
 
 function createBoard() {
@@ -123,7 +126,6 @@ function createBoard() {
     card.classList.add("memory-card");
     card.dataset.symbol = cardData.symbol;
     card.dataset.name = cardData.name;
-    card.textContent = cardData.symbol;
     card.setAttribute("aria-label", `Memory card: ${cardData.name}`);
 
     card.innerHTML = `
@@ -178,9 +180,12 @@ function checkForMatch() {
 
     if (matchesFound === currentPairs) {
       stopTimer();
-      finalStats.textContent = `You finished ${currentLevel} mode in ${moves} moves and ${timer} seconds.`;
-      winMessage.classList.remove("hidden");
-    }
+      showOverlay(
+      "Well done!",
+      "You matched all pairs.",
+      `You finished ${currentLevel} mode in ${moves} moves and ${timer} seconds.`
+  );
+}
   } else {
     lockBoard = true;
 
@@ -215,6 +220,22 @@ window.addEventListener("resize", () => {
   if (memoryGrid.children.length > 0) {
     applyGridLayout(memoryGrid.children.length);
   }
+});
+
+function hideOverlay() {
+  overlay.classList.add("hidden");
+}
+
+function showOverlay(title, text, stats = "") {
+  overlayTitle.textContent = title;
+  overlayText.textContent = text;
+  finalStats.textContent = stats;
+  overlay.classList.remove("hidden");
+}
+
+playAgainBtn.addEventListener("click", () => {
+  hideOverlay();
+  createBoard();
 });
 
 loadCards();

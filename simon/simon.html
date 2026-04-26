@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BrainGain - Simon</title>
   <link rel="stylesheet" href="../styles.css">
+   <link rel="stylesheet" href="simon.css">
 </head>
 
 <body>
@@ -23,10 +24,44 @@
   </div>
 </nav>
 
-<main class="container">
-  <section class="card">
+<main class="game-page">
+  <section class="game-card">
     <h2>Simon Game</h2>
-    <p>Coming soon</p>
+    <p>Repeat the sequence correctly.</p>
+
+    <div class="difficulty-buttons">
+      <button class="level-btn" data-level="easy">Easy</button>
+      <button class="level-btn" data-level="medium">Medium</button>
+      <button class="level-btn" data-level="hard">Hard</button>
+      <button class="level-btn" data-level="expert">Expert</button>
+    </div>
+
+    <p id="level-info" class="level-info">Choose a difficulty to begin.</p>
+
+    <div class="action-buttons">
+      <button id="startBtn" class="primary-btn hidden">Play</button>
+      <button id="restartBtn" class="secondary-btn">Restart</button>
+    </div>
+
+    <div class="simon-board" id="simonBoard">
+      <button class="pad green" data-color="green" aria-label="Green button"></button>
+      <button class="pad red" data-color="red" aria-label="Red button"></button>
+      <button class="pad yellow" data-color="yellow" aria-label="Yellow button"></button>
+      <button class="pad blue" data-color="blue" aria-label="Blue button"></button>
+
+      <div class="center-display">
+        <span class="center-label">Round</span>
+        <span id="round">0</span>
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h3 id="overlay-title">You win!</h3>
+        <p id="overlay-text">Great job.</p>
+        <button id="playAgainBtn" class="primary-btn">Play Again</button>
+      </div>
+    </div>
   </section>
 </main>
 
@@ -36,5 +71,6 @@ window.addEventListener('load', () => {
 });
 </script>
 
+<script src="simon.js"></script>
 </body>
 </html>
