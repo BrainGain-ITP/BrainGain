@@ -142,7 +142,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* TAGS - dein HTML benutzt .tag */
 .tag {
     display: inline-block;
     padding: 6px 13px;
@@ -184,13 +183,13 @@ body {
     opacity: 0.8;
 }
 
-/* OPTIONAL: falls du irgendwo card-link benutzt */
+
 .card-link {
     text-decoration: none;
     color: inherit;
 }
 
-/* OPTIONAL: alte badge-Klasse bleibt unterstützt */
+
 .badge {
     display: inline-block;
     margin-top: 10px;
