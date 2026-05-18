@@ -238,7 +238,7 @@
   grid-column: auto;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 700px) {
   .game-card {
     padding: 28px 14px 42px;
   }
@@ -254,18 +254,23 @@
     font-size: 0.9rem;
   }
 
- @media (max-width: 520px) {
   .sudoku-grid {
     width: 100%;
     max-width: 340px;
     height: auto;
     aspect-ratio: 1 / 1;
+    box-sizing: border-box;
   }
 
   .number-pad {
     width: 100%;
     max-width: 340px;
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  .number-btn {
+    padding: 10px 0;
+    font-size: 0.95rem;
   }
 
   .clear-number-btn {
