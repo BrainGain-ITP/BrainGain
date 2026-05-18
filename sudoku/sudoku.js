@@ -4,7 +4,6 @@ const levelInfo = document.getElementById("level-info");
 const newGameBtn = document.getElementById("newGameBtn");
 const restartBtn = document.getElementById("restartBtn");
 const checkBtn = document.getElementById("checkBtn");
-const clearBtn = document.getElementById("clearBtn");
 
 const numberButtons = document.querySelectorAll(".number-btn[data-number]");
 const clearNumberBtn = document.getElementById("clearNumberBtn");
@@ -12,6 +11,10 @@ const overlay = document.getElementById("overlay");
 const overlayTitle = document.getElementById("overlay-title");
 const overlayText = document.getElementById("overlay-text");
 const overlayBtn = document.getElementById("overlayBtn");
+const setupPanel = document.getElementById("setupPanel");
+const playPanel = document.getElementById("playPanel");
+const startBtn = document.getElementById("startBtn");
+const modeLabel = document.getElementById("modeLabel");
 let overlayAction = "continue";
 
 
@@ -30,6 +33,19 @@ const levels = {
   }
 };
 
+function showSetup() {
+  setupPanel.classList.remove("hidden");
+  playPanel.classList.add("hidden");
+}
+
+function showGame() {
+  setupPanel.classList.add("hidden");
+  playPanel.classList.remove("hidden");
+
+  modeLabel.textContent =
+    `${currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1)} mode`;
+}
+
 let boards = [];
 let currentLevel = "easy";
 let currentSolution = "";
@@ -40,7 +56,7 @@ async function loadBoards() {
   try {
     const response = await fetch("sudoku.json");
     boards = await response.json();
-    newGame();
+    showSetup();
   } catch (error) {
     sudokuGrid.innerHTML = "<p style='color:white;'>Could not load Sudoku boards.</p>";
     console.error("Error loading sudoku.json:", error);
@@ -74,9 +90,12 @@ function createPuzzle(solution, clues) {
 function newGame() {
   hideOverlay();
   selectedCell = null;
+
   currentSolution = getRandomBoard();
   currentPuzzle = createPuzzle(currentSolution, levels[currentLevel].clues);
+
   renderGrid();
+  showGame();
 }
 
 function restartGame() {
@@ -193,7 +212,7 @@ numberButtons.forEach(button => {
     selectedCell.classList.remove("wrong");
 
     selectedCell.dispatchEvent(new Event("input"));
-    
+
     checkIfComplete();
   });
 });
@@ -209,14 +228,16 @@ levelButtons.forEach(button => {
 
     currentLevel = button.dataset.level;
     levelInfo.textContent = levels[currentLevel].text;
-    newGame();
   });
 });
 
-newGameBtn.addEventListener("click", newGame);
+startBtn.addEventListener("click", newGame);
+
+newGameBtn.addEventListener("click", () => {
+  showSetup();
+});
 restartBtn.addEventListener("click", restartGame);
 checkBtn.addEventListener("click", checkBoard);
-clearBtn.addEventListener("click", clearSelectedCell);
 
 overlayBtn.addEventListener("click", () => {
   hideOverlay();

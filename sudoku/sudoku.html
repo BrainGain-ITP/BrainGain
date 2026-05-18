@@ -25,37 +25,45 @@
 
 <main class="game-page">
   <section class="game-card">
-    <h2>Sudoku</h2>
-    <p>Choose a difficulty and fill the grid.</p>
 
-    <div class="difficulty-buttons">
-      <button class="level-btn active" data-level="easy">Easy</button>
-      <button class="level-btn" data-level="medium">Medium</button>
-      <button class="level-btn" data-level="hard">Hard</button>
+    <div id="setupPanel" class="setup-panel">
+      <h2>Sudoku</h2>
+      <p>Choose a difficulty and fill the grid.</p>
+
+      <div class="difficulty-buttons">
+        <button class="level-btn active" data-level="easy">Easy</button>
+        <button class="level-btn" data-level="medium">Medium</button>
+        <button class="level-btn" data-level="hard">Hard</button>
+      </div>
+
+      <p id="level-info" class="level-info">Easy mode gives you more starting numbers.</p>
+
+      <button id="startBtn" class="primary-btn">Start Game</button>
     </div>
 
-    <p id="level-info" class="level-info">Easy mode gives you more starting numbers.</p>
+    <div id="playPanel" class="play-panel hidden">
+      <p id="modeLabel" class="mode-label">Easy mode</p>
 
-    <div class="game-actions">
-      <button id="newGameBtn" class="primary-btn">New Game</button>
-      <button id="restartBtn" class="secondary-btn">Restart</button>
-      <button id="checkBtn" class="secondary-btn">Check</button>
-      <button id="clearBtn" class="secondary-btn">Clear Cell</button>
-    </div>
+      <div class="game-actions">
+        <button id="newGameBtn" class="primary-btn">New Game</button>
+        <button id="restartBtn" class="secondary-btn">Restart</button>
+        <button id="checkBtn" class="secondary-btn">Check</button>
+      </div>
 
-    <div id="sudokuGrid" class="sudoku-grid"></div>
+      <div id="sudokuGrid" class="sudoku-grid"></div>
 
-    <div class="number-pad">
-      <button type="button" class="number-btn" data-number="1">1</button>
-      <button type="button" class="number-btn" data-number="2">2</button>
-      <button type="button" class="number-btn" data-number="3">3</button>
-      <button type="button" class="number-btn" data-number="4">4</button>
-      <button type="button" class="number-btn" data-number="5">5</button>
-      <button type="button" class="number-btn" data-number="6">6</button>
-      <button type="button" class="number-btn" data-number="7">7</button>
-      <button type="button" class="number-btn" data-number="8">8</button>
-      <button type="button" class="number-btn" data-number="9">9</button>
-      <button type="button" class="number-btn clear-number-btn" id="clearNumberBtn">⌫</button>
+      <div class="number-pad">
+        <button type="button" class="number-btn" data-number="1">1</button>
+        <button type="button" class="number-btn" data-number="2">2</button>
+        <button type="button" class="number-btn" data-number="3">3</button>
+        <button type="button" class="number-btn" data-number="4">4</button>
+        <button type="button" class="number-btn" data-number="5">5</button>
+        <button type="button" class="number-btn" data-number="6">6</button>
+        <button type="button" class="number-btn" data-number="7">7</button>
+        <button type="button" class="number-btn" data-number="8">8</button>
+        <button type="button" class="number-btn" data-number="9">9</button>
+        <button type="button" class="number-btn clear-number-btn" id="clearNumberBtn">⌫</button>
+      </div>
     </div>
 
     <div id="overlay" class="overlay hidden">
@@ -65,9 +73,9 @@
         <button id="overlayBtn" class="primary-btn">Continue</button>
       </div>
     </div>
+
   </section>
 </main>
-
 <script>
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
@@ -77,3 +85,5 @@ window.addEventListener("load", () => {
 <script src="sudoku.js"></script>
 </body>
 </html>
+
+    

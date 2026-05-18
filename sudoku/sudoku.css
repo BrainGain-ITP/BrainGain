@@ -238,6 +238,13 @@
   grid-column: auto;
 }
 
+.mode-label {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 @media (max-width: 700px) {
   .game-card {
     padding: 28px 14px 42px;
