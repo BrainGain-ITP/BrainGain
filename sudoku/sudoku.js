@@ -120,9 +120,16 @@ function renderGrid() {
       cell.disabled = true;
     } else {
       cell.value = "";
+
       cell.addEventListener("input", () => handleInput(cell));
-      cell.addEventListener("click", () => selectCell(cell));
-    }
+
+      cell.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+        selectCell(cell);
+      });
+    }   
+  
+      
 
     sudokuGrid.appendChild(cell);
   }
