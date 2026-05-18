@@ -6,11 +6,14 @@ const restartBtn = document.getElementById("restartBtn");
 const checkBtn = document.getElementById("checkBtn");
 const clearBtn = document.getElementById("clearBtn");
 
+const numberButtons = document.querySelectorAll(".number-btn[data-number]");
+const clearNumberBtn = document.getElementById("clearNumberBtn");
 const overlay = document.getElementById("overlay");
 const overlayTitle = document.getElementById("overlay-title");
 const overlayText = document.getElementById("overlay-text");
 const overlayBtn = document.getElementById("overlayBtn");
 let overlayAction = "continue";
+
 
 const levels = {
   easy: {
@@ -180,6 +183,24 @@ function showOverlay(title, text, action = "continue") {
 
   overlay.classList.remove("hidden");
 }
+
+numberButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    if (!selectedCell) return;
+    if (selectedCell.classList.contains("fixed")) return;
+
+    selectedCell.value = button.dataset.number;
+    selectedCell.classList.remove("wrong");
+
+    selectedCell.dispatchEvent(new Event("input"));
+    
+    checkIfComplete();
+  });
+});
+
+clearNumberBtn.addEventListener("click", () => {
+  clearSelectedCell();
+});
 
 levelButtons.forEach(button => {
   button.addEventListener("click", () => {

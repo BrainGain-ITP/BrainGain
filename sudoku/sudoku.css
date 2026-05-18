@@ -199,6 +199,45 @@
   display: none !important;
 }
 
+.number-pad {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.number-btn {
+  border: none;
+  outline: none;
+  padding: 14px 0;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
+
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.number-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 0.25);
+}
+
+.clear-number-btn {
+  grid-column: auto;
+}
+
 @media (max-width: 520px) {
   .game-card {
     padding: 28px 14px 42px;
@@ -215,8 +254,21 @@
     font-size: 0.9rem;
   }
 
+ @media (max-width: 520px) {
   .sudoku-grid {
-    width: min(94vw, 360px);
-    height: min(94vw, 360px);
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .number-pad {
+    width: 100%;
+    max-width: 340px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .clear-number-btn {
+    grid-column: auto;
   }
 }
