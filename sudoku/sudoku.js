@@ -112,6 +112,7 @@ function renderGrid() {
     cell.classList.add("sudoku-cell");
     cell.setAttribute("maxlength", "1");
     cell.setAttribute("inputmode", "numeric");
+    cell.readOnly = true;
 
     if (currentPuzzle[i] !== "0") {
       cell.value = currentPuzzle[i];
