@@ -1,13 +1,17 @@
+const startBtn = document.getElementById("startBtn");
 const pads = document.querySelectorAll(".pad");
 const roundDisplay = document.getElementById("round");
 const overlay = document.getElementById("overlay");
 const overlayTitle = document.getElementById("overlay-title");
 const overlayText = document.getElementById("overlay-text");
 const playAgainBtn = document.getElementById("playAgainBtn");
-const startBtn = document.getElementById("startBtn");
+const setupPanel = document.getElementById("setupPanel");
+const playPanel = document.getElementById("playPanel");
+const modeLabel = document.getElementById("modeLabel");
 const restartBtn = document.getElementById("restartBtn");
 const levelInfo = document.getElementById("level-info");
 const levelButtons = document.querySelectorAll(".level-btn");
+const newGameBtn = document.getElementById("newGameBtn");
 
 const colors = ["green", "red", "yellow", "blue"];
 
@@ -94,6 +98,33 @@ function showOverlay(title, text) {
   overlay.classList.remove("hidden");
 }
 
+function showSetup() {
+  setupPanel.classList.remove("hidden");
+  playPanel.classList.add("hidden");
+  hideOverlay();
+
+  gameActive = false;
+  isPlaying = false;
+  sequence = [];
+  userSequence = [];
+  round = 0;
+  updateRoundDisplay();
+  disablePads();
+
+  levelButtons.forEach(button => button.classList.remove("active"));
+  selectedLevel = null;
+  levelInfo.textContent = "Choose a difficulty to begin.";
+  startBtn.classList.add("hidden");
+}
+
+function showGame() {
+  setupPanel.classList.add("hidden");
+  playPanel.classList.remove("hidden");
+
+  modeLabel.textContent =
+    `${selectedLevel.charAt(0).toUpperCase() + selectedLevel.slice(1)} mode`;
+}
+
 function setSelectedLevel(levelKey) {
   selectedLevel = levelKey;
   const level = levels[levelKey];
@@ -112,6 +143,8 @@ function setSelectedLevel(levelKey) {
 
 function startGame() {
   if (!selectedLevel) return;
+
+  showGame();
 
   sequence = [];
   userSequence = [];
@@ -158,14 +191,14 @@ function loseGame() {
   gameActive = false;
   isPlaying = false;
   disablePads();
-  showOverlay("You lost. Better luck next time!");
+  showOverlay("You lost", "Better luck next time.");
 }
 
 function winGame() {
   gameActive = false;
   isPlaying = false;
   disablePads();
-  showOverlay("You won! Great job.");
+  showOverlay("You won!", "You completed all rounds.");
 }
 
 function handleInput(color) {
@@ -209,18 +242,18 @@ pads.forEach(pad => {
   });
 });
 
+showSetup();
+
 startBtn.addEventListener("click", startGame);
 
 restartBtn.addEventListener("click", () => {
-  if (!selectedLevel) {
-    showOverlay("Choose a difficulty first.");
-    return;
-  }
-
   startGame();
 });
 
 playAgainBtn.addEventListener("click", () => {
-  hideOverlay();
-  startGame();
+  showSetup();
+});
+
+newGameBtn.addEventListener("click", () => {
+  showSetup();
 });

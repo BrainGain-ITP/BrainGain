@@ -214,12 +214,6 @@
   line-height: 1.1;
 }
 
-
-
-.hidden {
-  display: none;
-}
-
 .message {
   margin-top: 24px;
   padding: 16px 18px;
@@ -449,3 +443,10 @@
 .center-label {
   color: var(--muted);
 } 
+
+.mode-label {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}

@@ -26,42 +26,52 @@
 
 <main class="game-page">
   <section class="game-card">
-    <h2>Simon Game</h2>
-    <p>Repeat the sequence correctly.</p>
 
-    <div class="difficulty-buttons">
-      <button class="level-btn" data-level="easy">Easy</button>
-      <button class="level-btn" data-level="medium">Medium</button>
-      <button class="level-btn" data-level="hard">Hard</button>
-      <button class="level-btn" data-level="expert">Expert</button>
-    </div>
+    <div id="setupPanel" class="setup-panel">
+      <h2>Simon Game</h2>
+      <p>Choose a difficulty to begin.</p>
 
-    <p id="level-info" class="level-info">Choose a difficulty to begin.</p>
+      <div class="difficulty-buttons">
+        <button class="level-btn" data-level="easy">Easy</button>
+        <button class="level-btn" data-level="medium">Medium</button>
+        <button class="level-btn" data-level="hard">Hard</button>
+        <button class="level-btn" data-level="expert">Expert</button>
+      </div>
 
-    <div class="action-buttons">
+      <p id="level-info" class="level-info">Choose a difficulty to begin.</p>
+
       <button id="startBtn" class="primary-btn hidden">Play</button>
-      <button id="restartBtn" class="secondary-btn">Restart</button>
     </div>
 
-    <div class="simon-board" id="simonBoard">
-      <button class="pad green" data-color="green" aria-label="Green button"></button>
-      <button class="pad red" data-color="red" aria-label="Red button"></button>
-      <button class="pad yellow" data-color="yellow" aria-label="Yellow button"></button>
-      <button class="pad blue" data-color="blue" aria-label="Blue button"></button>
+    <div id="playPanel" class="play-panel hidden">
+      <p id="modeLabel" class="mode-label">Easy mode</p>
 
-      <div class="center-display">
-        <span class="center-label">Round</span>
-        <span id="round">0</span>
+      <div class="action-buttons">
+        <button id="newGameBtn" class="primary-btn">New Game</button>
+        <button id="restartBtn" class="secondary-btn">Restart</button>
+      </div>
+
+      <div class="simon-board" id="simonBoard">
+        <button class="pad green" data-color="green" aria-label="Green button"></button>
+        <button class="pad red" data-color="red" aria-label="Red button"></button>
+        <button class="pad yellow" data-color="yellow" aria-label="Yellow button"></button>
+        <button class="pad blue" data-color="blue" aria-label="Blue button"></button>
+
+        <div class="center-display">
+          <span class="center-label">Round</span>
+          <span id="round">0</span>
+        </div>
       </div>
     </div>
 
     <div id="overlay" class="overlay hidden">
       <div class="overlay-card">
-        <h3 id="overlay-title">You win!</h3>
-        <p id="overlay-text">Great job.</p>
-        <button id="playAgainBtn" class="primary-btn">Play Again</button>
+        <h3 id="overlay-title">You lost</h3>
+        <p id="overlay-text">Better luck next time.</p>
+        <button id="playAgainBtn" class="primary-btn">Choose Difficulty</button>
       </div>
     </div>
+
   </section>
 </main>
 
