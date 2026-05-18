@@ -4,37 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BrainGain - Sudoku</title>
-  <link rel="stylesheet" href="../styles.css">
-</head>
 
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="sudoku.css">
+</head>
 <body>
 
 <nav class="nav">
   <a href="../index.html" class="nav-left">
-    <img src="../images/icon-192.png" class="nav-logo">
+    <img src="../images/icon-192.png" class="nav-logo" alt="BrainGain">
     <span class="nav-title">BrainGain</span>
   </a>
 
   <div class="nav-links">
-    <!-- <a href="../index.html">Home</a> -->
     <a href="../memory/memory.html">Memory</a>
     <a href="../simon/simon.html">Simon</a>
     <a href="sudoku.html" class="active">Sudoku</a>
   </div>
 </nav>
 
-<main class="container">
-  <section class="card">
+<main class="game-page">
+  <section class="game-card">
     <h2>Sudoku</h2>
-    <p>Coming soon</p>
+    <p>Choose a difficulty and fill the grid.</p>
+
+    <div class="difficulty-buttons">
+      <button class="level-btn active" data-level="easy">Easy</button>
+      <button class="level-btn" data-level="medium">Medium</button>
+      <button class="level-btn" data-level="hard">Hard</button>
+    </div>
+
+    <p id="level-info" class="level-info">Easy mode gives you more starting numbers.</p>
+
+    <div class="game-actions">
+      <button id="newGameBtn" class="primary-btn">New Game</button>
+      <button id="restartBtn" class="secondary-btn">Restart</button>
+      <button id="checkBtn" class="secondary-btn">Check</button>
+      <button id="clearBtn" class="secondary-btn">Clear Cell</button>
+    </div>
+
+    <div id="sudokuGrid" class="sudoku-grid"></div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h3 id="overlay-title">Well done!</h3>
+        <p id="overlay-text">You solved the Sudoku.</p>
+        <button id="overlayBtn" class="primary-btn">Continue</button>
+      </div>
+    </div>
   </section>
 </main>
 
 <script>
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
 });
 </script>
 
+<script src="sudoku.js"></script>
 </body>
 </html>

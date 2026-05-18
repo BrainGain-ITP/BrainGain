@@ -1,0 +1,222 @@
+.game-page {
+  min-height: calc(100vh - 65px);
+  padding: 55px 20px 90px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.game-card {
+  width: 100%;
+  max-width: 1000px;
+  padding: 45px 28px 55px;
+  border-radius: 26px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.32);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -60px;
+  top: -60px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.35),
+    rgba(139, 92, 246, 0.25)
+  );
+  filter: blur(8px);
+  opacity: 0.6;
+}
+
+.game-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.game-card h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #ffffff, #c4b5fd, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.game-card p {
+  color: var(--muted);
+}
+
+.difficulty-buttons,
+.game-actions {
+  margin: 22px 0 14px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.level-btn,
+.primary-btn,
+.secondary-btn {
+  border: none;
+  outline: none;
+  padding: 11px 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #070716;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.level-btn:hover,
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 0.25);
+}
+
+.level-btn.active {
+  color: #ffffff;
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+}
+
+.level-info {
+  min-height: 24px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.sudoku-grid {
+  width: min(90vw, 450px);
+  height: min(90vw, 450px);
+  margin: 26px auto 0;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.sudoku-cell {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: clamp(1rem, 4vw, 1.6rem);
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sudoku-cell:nth-child(3n) {
+  border-right: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.sudoku-cell:nth-child(9n) {
+  border-right: none;
+}
+
+.sudoku-cell:nth-child(n + 19):nth-child(-n + 27),
+.sudoku-cell:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.sudoku-cell.fixed {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.45), rgba(34, 211, 238, 0.25));
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.sudoku-cell.selected {
+  background: rgba(34, 211, 238, 0.25);
+}
+
+.sudoku-cell.wrong {
+  background: rgba(255, 80, 80, 0.35);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  padding: 20px;
+  background: rgba(7, 7, 22, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 26px;
+}
+
+.overlay-card {
+  width: 100%;
+  max-width: 360px;
+  padding: 28px 22px;
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.32);
+}
+
+.overlay-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #c4b5fd, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.overlay-card p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  .game-card {
+    padding: 28px 14px 42px;
+  }
+
+  .game-actions {
+    gap: 9px;
+  }
+
+  .level-btn,
+  .primary-btn,
+  .secondary-btn {
+    padding: 9px 14px;
+    font-size: 0.9rem;
+  }
+
+  .sudoku-grid {
+    width: min(94vw, 360px);
+    height: min(94vw, 360px);
+  }
+}
