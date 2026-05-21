@@ -52,7 +52,7 @@ let maxRounds = null;
 let baseSpeed = 700;
 let currentSpeed = 700;
 let isPlaying = false;
-let selectedLevel = null;
+let selectedLevel = "easy";
 let gameActive = false;
 
 function resetAudio(audio) {
@@ -111,10 +111,7 @@ function showSetup() {
   updateRoundDisplay();
   disablePads();
 
-  levelButtons.forEach(button => button.classList.remove("active"));
-  selectedLevel = null;
-  levelInfo.textContent = "Choose a difficulty to begin.";
-  startBtn.classList.add("hidden");
+  setSelectedLevel("easy");
 }
 
 function showGame() {
