@@ -182,7 +182,7 @@ function checkBoard() {
 
 function checkIfComplete() {
   if (getUserBoard() === currentSolution) {
-    showOverlay("You solved it!", "Great job completing the Sudoku.");
+    showOverlay("You solved it!", "Great job completing the Sudoku.", "newGame");
   }
 }
 
@@ -203,7 +203,7 @@ function showOverlay(title, text, action = "continue") {
   overlayAction = action;
 
   if (action === "newGame") {
-    overlayBtn.textContent = "New Game";
+    overlayBtn.textContent = "Play again";
   } else {
     overlayBtn.textContent = "Continue";
   }
@@ -251,7 +251,7 @@ overlayBtn.addEventListener("click", () => {
   hideOverlay();
 
   if (overlayAction === "newGame") {
-    newGame();
+    showSetup();
   }
 });
 
