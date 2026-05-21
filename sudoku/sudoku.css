@@ -6,6 +6,12 @@
   align-items: flex-start;
 }
 
+.nav-brand-logo {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
 .game-card {
   width: 100%;
   max-width: 1000px;
