@@ -23,7 +23,7 @@ body {
 .game-card {
   width: 100%;
   max-width: 1000px;
-  padding: 45px 28px 55px;
+  padding: 40px 28px 60px;
   border-radius: 26px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
