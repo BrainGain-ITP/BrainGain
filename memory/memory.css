@@ -290,54 +290,67 @@ body {
 
 
 /* =========================
-   MOBILE NO SCROLL FIX
+   MOBILE MEMORY FIT
 ========================= */
 
 @media (max-width: 700px) {
   html,
   body {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    min-height: 100%;
+    overflow-x: hidden;
   }
 
   body {
-    height: 100dvh;
     min-height: 100dvh;
+    overflow-y: auto;
   }
 
   .game-page {
-    height: calc(100dvh - 110px);
-    min-height: 0;
+    min-height: calc(100dvh - 110px);
     padding: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    align-items: flex-start;
+    overflow: visible;
   }
 
   .game-card {
     width: 100%;
-    max-height: 100%;
-    padding: 14px 12px;
-    overflow: hidden;
+    padding: 14px 12px 18px;
+    overflow: visible;
   }
 
-  .game-card h2,
-  .game-card > p,
+  .game-card h2 {
+    font-size: 2rem;
+    margin-bottom: 6px;
+  }
+
+  .game-card > p {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
   .difficulty-buttons {
-    display: none;
+    margin: 12px 0 10px;
+    gap: 8px;
+  }
+
+  .level-btn {
+    padding: 9px 15px;
+    font-size: 0.85rem;
   }
 
   .game-info {
-    margin: 0 0 10px;
+    margin: 8px 0 12px;
     gap: 8px;
   }
 
   .game-info span,
   #restartBtn {
     padding: 7px 11px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .memory-grid {
@@ -357,53 +370,5 @@ body {
 
   .memory-card-back {
     font-size: 1.2rem;
-  }
-
-  .overlay {
-    border-radius: 26px;
-    padding: 14px;
-  }
-
-  .overlay-card {
-    padding: 22px 18px;
-  }
-}
-
-
-/* =========================
-   VERY SMALL PHONES
-========================= */
-
-@media (max-width: 380px) {
-  .game-page {
-    height: calc(100dvh - 105px);
-    padding: 8px;
-  }
-
-  .game-card {
-    padding: 12px 10px;
-  }
-
-  .game-info {
-    margin-bottom: 8px;
-  }
-
-  .game-info span,
-  #restartBtn {
-    padding: 6px 9px;
-    font-size: 0.78rem;
-  }
-
-  .memory-grid {
-    gap: 6px;
-  }
-
-  .memory-card {
-    max-width: 58px;
-    min-width: 38px;
-  }
-
-  .memory-card-back {
-    font-size: 1.1rem;
   }
 }
