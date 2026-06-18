@@ -290,7 +290,7 @@ body {
 
 
 /* =========================
-   MOBILE MEMORY FIT
+   MOBILE MEMORY FIT 
 ========================= */
 
 @media (max-width: 700px) {
@@ -317,40 +317,52 @@ body {
 
   .game-card {
     width: 100%;
-    padding: 14px 12px 18px;
+    padding: 18px 12px 22px;
     overflow: visible;
   }
 
   .game-card h2 {
-    font-size: 2rem;
-    margin-bottom: 6px;
-  }
-
-  .game-card > p {
-    font-size: 0.85rem;
-    line-height: 1.35;
+    display: block;
+    font-size: 1.9rem;
+    line-height: 1.1;
     margin-bottom: 8px;
   }
 
+  .game-card > p {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+
   .difficulty-buttons {
-    margin: 12px 0 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 8px;
+    margin: 10px 0 12px;
   }
 
   .level-btn {
     padding: 9px 15px;
     font-size: 0.85rem;
+    white-space: nowrap;
   }
 
   .game-info {
-    margin: 8px 0 12px;
+    margin: 8px 0 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   .game-info span,
   #restartBtn {
-    padding: 7px 11px;
-    font-size: 0.82rem;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    white-space: nowrap;
   }
 
   .memory-grid {
@@ -370,5 +382,59 @@ body {
 
   .memory-card-back {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .game-page {
+    padding: 8px;
+  }
+
+  .game-card {
+    padding: 14px 10px 18px;
+  }
+
+  .game-card h2 {
+    font-size: 1.65rem;
+    margin-bottom: 6px;
+  }
+
+  .game-card > p {
+    font-size: 0.78rem;
+    margin-bottom: 8px;
+  }
+
+  .difficulty-buttons {
+    gap: 6px;
+    margin: 8px 0 10px;
+  }
+
+  .level-btn {
+    padding: 7px 11px;
+    font-size: 0.75rem;
+  }
+
+  .game-info {
+    gap: 6px;
+    margin: 6px 0 10px;
+  }
+
+  .game-info span,
+  #restartBtn {
+    padding: 7px 9px;
+    font-size: 0.75rem;
+  }
+
+  .memory-grid {
+    gap: 6px;
+  }
+
+  .memory-card {
+    max-width: 56px;
+    min-width: 38px;
+  }
+
+  .memory-card-back {
+    font-size: 1.05rem;
   }
 }
