@@ -4,12 +4,6 @@
   padding: 20px;
 }
 
-.nav-brand-logo {
-  height: 56px;
-  width: auto;
-  display: block;
-}
-
 .game-card {
   width: 100%;
   position: relative;
@@ -328,8 +322,6 @@
     font-size: 1.3rem;
   }
 }
-
-
 
 /*homepage style */ 
 
