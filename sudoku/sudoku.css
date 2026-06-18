@@ -211,14 +211,14 @@
 .number-btn {
   border: none;
   outline: none;
-  padding: 14px 0;
+  padding: 10px 0;
   border-radius: 18px;
 
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--card-border);
 
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   cursor: pointer;
 
