@@ -419,3 +419,33 @@
 .memory-card:hover {
   transform: translateY(-5px);
 }
+
+
+
+/* Fix: no scrolling on mobile app */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+.game-page {
+  height: calc(100dvh - 65px);
+  min-height: 0;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.game-card {
+  max-height: 100%;
+  overflow: hidden;
+}
+
