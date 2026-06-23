@@ -1,65 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BrainGain</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrainGain</title>
 
-        <!--CSS-->
-        <link rel="stylesheet" href="styles.css">
+    <!--CSS-->
+    <link rel="stylesheet" href="styles.css" />
 
-        <!--PWA-->
-        <link rel="manifest" href="manifest.json">  
-    </head>
-    <body>
-        <header class="header">
-            <img src="images/logo.png" class="logo-img" alt="BrainGain logo">
-            <h1 class="hero-title"> Train your brain with fun mini games</h1>
-            <p class="slogan">Pick a game to challenge your focus, memory and logic skills</p>
-				</header>
+    <!--PWA-->
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="images/logo.png" class="logo-img" alt="BrainGain logo" />
+      <h1 class="hero-title">Train your brain with fun mini games</h1>
+      <p class="slogan">Pick a game to challenge your focus, memory and logic skills</p>
+    </header>
 
-        <main class="container">
+    <main class="container">
+      <section class="card">
+        <span class="tag">Memory</span>
+        <h2>Memory Match</h2>
+        <p>Flip the cards and find matching pairs.</p>
+        <a href="memory/memory.html" class="play-btn">Play</a>
+      </section>
 
-            <section class="card">
-            <span class="tag">Memory</span>
-            <h2>Memory Match</h2>
-            <p>Flip the cards and find matching pairs.</p>
-            <a href="memory/memory.html" class="play-btn">Play</a>
-        </section>
+      <section class="card">
+        <span class="tag">Memory</span>
+        <span class="tag">Focus</span>
+        <h2>Simon</h2>
+        <p>Memorize and repeat the sequence correctly.</p>
+        <a href="simon/simon.html" class="play-btn">Play</a>
+      </section>
 
-        <section class="card">
-						<span class="tag">Memory</span>
-						<span class="tag">Focus</span>
-            <h2>Simon</h2>
-            <p>Memorize and repeat the sequence correctly.</p>
-            <a href="simon/simon.html" class="play-btn">Play</a>
-        </section>
+      <section class="card">
+        <span class="tag">Logic</span>
+        <h2>Sudoku</h2>
+        <p>Fill the grid with the correct numbers.</p>
+        <a href="sudoku/sudoku.html" class="play-btn">Play</a>
+      </section>
+    </main>
 
-        <section class="card">
-            <span class="tag">Logic</span>
-            <h2>Sudoku</h2>
-            <p>Fill the grid with the correct numbers.</p>
-            <a href="sudoku/sudoku.html" class="play-btn">Play</a>
-        </section>
+    <footer class="footer">
+      <p>BrainGain</p>
+    </footer>
 
-        </main>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+      }
+    </script>
 
-        <footer class="footer">
-            <p>BrainGain</p>
-        </footer>
-
-        <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js');
-        }
-        </script>
-
-
-        <script>
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-        });    
-        </script>
-
-    </body>
+    <script>
+      window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+      });
+    </script>
+  </body>
 </html>

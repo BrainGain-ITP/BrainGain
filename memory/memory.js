@@ -12,7 +12,7 @@ const levelButtons = document.querySelectorAll(".level-btn");
 const levels = {
   easy: 6,
   medium: 12,
-  hard: 18
+  hard: 18,
 };
 
 let allCards = [];
@@ -180,12 +180,8 @@ function checkForMatch() {
 
     if (matchesFound === currentPairs) {
       stopTimer();
-      showOverlay(
-      "Well done!",
-      "You matched all pairs.",
-      `You finished ${currentLevel} mode in ${moves} moves and ${timer} seconds.`
-  );
-}
+      showOverlay("Well done!", "You matched all pairs.", `You finished ${currentLevel} mode in ${moves} moves and ${timer} seconds.`);
+    }
   } else {
     lockBoard = true;
 

@@ -20,5 +20,5 @@
   { "id": 16, "name": "Ring", "symbol": "◯" },
 
   { "id": 17, "name": "OutlineDiamond", "symbol": "◇" },
-{ "id": 18, "name": "OutlineStar", "symbol": "☆" }
+  { "id": 18, "name": "OutlineStar", "symbol": "☆" }
 ]

@@ -1,64 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BrainGain - Memory Match</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrainGain - Memory Match</title>
 
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="memory.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="memory.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="../index.html" class="nav-left">
+        <img src="../images/logo.png" class="nav-brand-logo" alt="BrainGain" />
+      </a>
 
-  <nav class="nav">
-    <a href="../index.html" class="nav-left">
-      <img src="../images/logo.png" class="nav-brand-logo" alt="BrainGain">
-    </a>
-
-    <div class="nav-links">
+      <div class="nav-links">
         <!-- <a href="../index.html">Home</a> -->
         <a href="memory.html" class="active">Memory</a>
         <a href="../simon/simon.html">Simon</a>
         <a href="../sudoku/sudoku.html">Sudoku</a>
-    </div>
+      </div>
     </nav>
 
-  <main class="game-page">
-    <section class="game-card fade-in">
-      <h2>Memory Match</h2>
-      <p>Choose a difficulty and match all symbol pairs.</p>
+    <main class="game-page">
+      <section class="game-card fade-in">
+        <h2>Memory Match</h2>
+        <p>Choose a difficulty and match all symbol pairs.</p>
 
-      <div class="difficulty-buttons">
-        <button class="level-btn active" data-level="easy">Easy</button>
-        <button class="level-btn" data-level="medium">Medium</button>
-        <button class="level-btn" data-level="hard">Difficult</button>
-      </div>
-
-      <div class="game-info">
-        <span id="moves">Moves: 0</span>
-        <span id="timer">Time: 0s</span>
-        <button id="restartBtn">Restart</button>
-      </div>
-
-      <div id="memoryGrid" class="memory-grid"></div>
-
-      <div id="overlay" class="overlay hidden">
-        <div class="overlay-card">
-          <h3 id="overlay-title">Well done!</h3>
-          <p id="overlay-text">You matched all pairs.</p>
-          <p id="finalStats"></p>
-          <button id="playAgainBtn" class="primary-btn">Play again</button>
+        <div class="difficulty-buttons">
+          <button class="level-btn active" data-level="easy">Easy</button>
+          <button class="level-btn" data-level="medium">Medium</button>
+          <button class="level-btn" data-level="hard">Difficult</button>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <script>
-    window.addEventListener('load', () => {
-      document.body.classList.add('loaded');
-    });
-  </script>
+        <div class="game-info">
+          <span id="moves">Moves: 0</span>
+          <span id="timer">Time: 0s</span>
+          <button id="restartBtn">Restart</button>
+        </div>
 
-  <script src="memory.js"></script>
-</body>
+        <div id="memoryGrid" class="memory-grid"></div>
+
+        <div id="overlay" class="overlay hidden">
+          <div class="overlay-card">
+            <h3 id="overlay-title">Well done!</h3>
+            <p id="overlay-text">You matched all pairs.</p>
+            <p id="finalStats"></p>
+            <button id="playAgainBtn" class="primary-btn">Play again</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+      });
+    </script>
+
+    <script src="memory.js"></script>
+  </body>
 </html>

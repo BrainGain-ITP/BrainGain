@@ -1,85 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BrainGain - Simon</title>
-  <link rel="stylesheet" href="../styles.css">
-   <link rel="stylesheet" href="simon.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrainGain - Simon</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="simon.css" />
+  </head>
 
-<body>
+  <body>
+    <nav class="nav">
+      <a href="../index.html" class="nav-left">
+        <img src="../images/logo.png" class="nav-brand-logo" alt="BrainGain" />
+      </a>
 
-<nav class="nav">
-  <a href="../index.html" class="nav-left">
-    <img src="../images/logo.png" class="nav-brand-logo" alt="BrainGain">
-  </a>
-
-  <div class="nav-links">
-    <!-- <a href="../index.html">Home</a> -->
-    <a href="../memory/memory.html">Memory</a>
-    <a href="simon.html" class="active">Simon</a>
-    <a href="../sudoku/sudoku.html">Sudoku</a>
-  </div>
-</nav>
-
-<main class="game-page">
-  <section class="game-card">
-
-    <div id="setupPanel" class="setup-panel">
-      <h2>Simon Game</h2>
-      <p>Choose a difficulty to begin.</p>
-
-      <div class="difficulty-buttons">
-        <button class="level-btn active" data-level="easy">Easy</button>
-        <button class="level-btn" data-level="medium">Medium</button>
-        <button class="level-btn" data-level="hard">Hard</button>
-        <button class="level-btn" data-level="expert">Expert</button>
+      <div class="nav-links">
+        <!-- <a href="../index.html">Home</a> -->
+        <a href="../memory/memory.html">Memory</a>
+        <a href="simon.html" class="active">Simon</a>
+        <a href="../sudoku/sudoku.html">Sudoku</a>
       </div>
+    </nav>
 
-      <p id="level-info" class="level-info">Beat 6 rounds to win.</p>
+    <main class="game-page">
+      <section class="game-card">
+        <div id="setupPanel" class="setup-panel">
+          <h2>Simon Game</h2>
+          <p>Choose a difficulty to begin.</p>
 
-      <button id="startBtn" class="primary-btn">Start game</button>
-    </div>
+          <div class="difficulty-buttons">
+            <button class="level-btn active" data-level="easy">Easy</button>
+            <button class="level-btn" data-level="medium">Medium</button>
+            <button class="level-btn" data-level="hard">Hard</button>
+            <button class="level-btn" data-level="expert">Expert</button>
+          </div>
 
-    <div id="playPanel" class="play-panel hidden">
-      <p id="modeLabel" class="mode-label">Easy mode</p>
+          <p id="level-info" class="level-info">Beat 6 rounds to win.</p>
 
-      <div class="action-buttons">
-        <button id="newGameBtn" class="primary-btn">New game</button>
-        <button id="restartBtn" class="secondary-btn">Restart</button>
-      </div>
-
-      <div class="simon-board" id="simonBoard">
-        <button class="pad green" data-color="green" aria-label="Green button"></button>
-        <button class="pad red" data-color="red" aria-label="Red button"></button>
-        <button class="pad yellow" data-color="yellow" aria-label="Yellow button"></button>
-        <button class="pad blue" data-color="blue" aria-label="Blue button"></button>
-
-        <div class="center-display">
-          <span class="center-label">Round</span>
-          <span id="round">0</span>
+          <button id="startBtn" class="primary-btn">Start game</button>
         </div>
-      </div>
-    </div>
 
-    <div id="overlay" class="overlay hidden">
-      <div class="overlay-card">
-        <h3 id="overlay-title">You lost</h3>
-        <p id="overlay-text">Better luck next time.</p>
-        <button id="playAgainBtn" class="primary-btn">Play again</button>
-      </div>
-    </div>
+        <div id="playPanel" class="play-panel hidden">
+          <p id="modeLabel" class="mode-label">Easy mode</p>
 
-  </section>
-</main>
+          <div class="action-buttons">
+            <button id="newGameBtn" class="primary-btn">New game</button>
+            <button id="restartBtn" class="secondary-btn">Restart</button>
+          </div>
 
-<script>
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
-</script>
+          <div class="simon-board" id="simonBoard">
+            <button class="pad green" data-color="green" aria-label="Green button"></button>
+            <button class="pad red" data-color="red" aria-label="Red button"></button>
+            <button class="pad yellow" data-color="yellow" aria-label="Yellow button"></button>
+            <button class="pad blue" data-color="blue" aria-label="Blue button"></button>
 
-<script src="simon.js"></script>
-</body>
+            <div class="center-display">
+              <span class="center-label">Round</span>
+              <span id="round">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="overlay" class="overlay hidden">
+          <div class="overlay-card">
+            <h3 id="overlay-title">You lost</h3>
+            <p id="overlay-text">Better luck next time.</p>
+            <button id="playAgainBtn" class="primary-btn">Play again</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+      });
+    </script>
+
+    <script src="simon.js"></script>
+  </body>
 </html>

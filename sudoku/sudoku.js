@@ -17,20 +17,19 @@ const startBtn = document.getElementById("startBtn");
 const modeLabel = document.getElementById("modeLabel");
 let overlayAction = "continue";
 
-
 const levels = {
   easy: {
     clues: 44,
-    text: "Easy mode gives you more starting numbers."
+    text: "Easy mode gives you more starting numbers.",
   },
   medium: {
     clues: 34,
-    text: "Medium mode gives you a balanced challenge."
+    text: "Medium mode gives you a balanced challenge.",
   },
   hard: {
     clues: 26,
-    text: "Hard mode gives you fewer starting numbers."
-  }
+    text: "Hard mode gives you fewer starting numbers.",
+  },
 };
 
 function showSetup() {
@@ -42,8 +41,7 @@ function showGame() {
   setupPanel.classList.add("hidden");
   playPanel.classList.remove("hidden");
 
-  modeLabel.textContent =
-    `${currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1)} mode`;
+  modeLabel.textContent = `${currentLevel.charAt(0).toUpperCase() + currentLevel.slice(1)} mode`;
 }
 
 let boards = [];
@@ -123,13 +121,11 @@ function renderGrid() {
 
       cell.addEventListener("input", () => handleInput(cell));
 
-      cell.addEventListener("pointerdown", (event) => {
+      cell.addEventListener("pointerdown", event => {
         event.preventDefault();
         selectCell(cell);
       });
-    }   
-  
-      
+    }
 
     sudokuGrid.appendChild(cell);
   }
@@ -153,9 +149,7 @@ function handleInput(cell) {
 }
 
 function getUserBoard() {
-  return [...document.querySelectorAll(".sudoku-cell")]
-    .map(cell => cell.value || "0")
-    .join("");
+  return [...document.querySelectorAll(".sudoku-cell")].map(cell => cell.value || "0").join("");
 }
 
 function checkBoard() {

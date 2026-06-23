@@ -1,88 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BrainGain - Sudoku</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrainGain - Sudoku</title>
 
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="sudoku.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="sudoku.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="../index.html" class="nav-left">
+        <img src="../images/logo.png" class="nav-brand-logo" alt="BrainGain" />
+      </a>
 
-<nav class="nav">
-  <a href="../index.html" class="nav-left">
-    <img src="../images/logo.png" class="nav-brand-logo" alt="BrainGain">
-  </a>
-
-  <div class="nav-links">
-    <a href="../memory/memory.html">Memory</a>
-    <a href="../simon/simon.html">Simon</a>
-    <a href="sudoku.html" class="active">Sudoku</a>
-  </div>
-</nav>
-
-<main class="game-page">
-  <section class="game-card">
-
-    <div id="setupPanel" class="setup-panel">
-      <h2>Sudoku</h2>
-      <p>Choose a difficulty and fill the grid.</p>
-
-      <div class="difficulty-buttons">
-        <button class="level-btn active" data-level="easy">Easy</button>
-        <button class="level-btn" data-level="medium">Medium</button>
-        <button class="level-btn" data-level="hard">Hard</button>
+      <div class="nav-links">
+        <a href="../memory/memory.html">Memory</a>
+        <a href="../simon/simon.html">Simon</a>
+        <a href="sudoku.html" class="active">Sudoku</a>
       </div>
+    </nav>
 
-      <p id="level-info" class="level-info">Easy mode gives you more starting numbers.</p>
+    <main class="game-page">
+      <section class="game-card">
+        <div id="setupPanel" class="setup-panel">
+          <h2>Sudoku</h2>
+          <p>Choose a difficulty and fill the grid.</p>
 
-      <button id="startBtn" class="primary-btn">Start game</button>
-    </div>
+          <div class="difficulty-buttons">
+            <button class="level-btn active" data-level="easy">Easy</button>
+            <button class="level-btn" data-level="medium">Medium</button>
+            <button class="level-btn" data-level="hard">Hard</button>
+          </div>
 
-    <div id="playPanel" class="play-panel hidden">
-      <p id="modeLabel" class="mode-label">Easy mode</p>
+          <p id="level-info" class="level-info">Easy mode gives you more starting numbers.</p>
 
-      <div class="game-actions">
-        <button id="newGameBtn" class="primary-btn">New game</button>
-        <button id="restartBtn" class="secondary-btn">Restart</button>
-        <button id="checkBtn" class="secondary-btn">Check</button>
-      </div>
+          <button id="startBtn" class="primary-btn">Start game</button>
+        </div>
 
-      <div id="sudokuGrid" class="sudoku-grid"></div>
+        <div id="playPanel" class="play-panel hidden">
+          <p id="modeLabel" class="mode-label">Easy mode</p>
 
-      <div class="number-pad">
-        <button type="button" class="number-btn" data-number="1">1</button>
-        <button type="button" class="number-btn" data-number="2">2</button>
-        <button type="button" class="number-btn" data-number="3">3</button>
-        <button type="button" class="number-btn" data-number="4">4</button>
-        <button type="button" class="number-btn" data-number="5">5</button>
-        <button type="button" class="number-btn" data-number="6">6</button>
-        <button type="button" class="number-btn" data-number="7">7</button>
-        <button type="button" class="number-btn" data-number="8">8</button>
-        <button type="button" class="number-btn" data-number="9">9</button>
-        <button type="button" class="number-btn clear-number-btn" id="clearNumberBtn">⌫</button>
-      </div>
-    </div>
+          <div class="game-actions">
+            <button id="newGameBtn" class="primary-btn">New game</button>
+            <button id="restartBtn" class="secondary-btn">Restart</button>
+            <button id="checkBtn" class="secondary-btn">Check</button>
+          </div>
 
-    <div id="overlay" class="overlay hidden">
-      <div class="overlay-card">
-        <h3 id="overlay-title">Well done!</h3>
-        <p id="overlay-text">You solved the Sudoku.</p>
-        <button id="overlayBtn" class="primary-btn">Play again</button>
-      </div>
-    </div>
+          <div id="sudokuGrid" class="sudoku-grid"></div>
 
-  </section>
-</main>
-<script>
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-});
-</script>
+          <div class="number-pad">
+            <button type="button" class="number-btn" data-number="1">1</button>
+            <button type="button" class="number-btn" data-number="2">2</button>
+            <button type="button" class="number-btn" data-number="3">3</button>
+            <button type="button" class="number-btn" data-number="4">4</button>
+            <button type="button" class="number-btn" data-number="5">5</button>
+            <button type="button" class="number-btn" data-number="6">6</button>
+            <button type="button" class="number-btn" data-number="7">7</button>
+            <button type="button" class="number-btn" data-number="8">8</button>
+            <button type="button" class="number-btn" data-number="9">9</button>
+            <button type="button" class="number-btn clear-number-btn" id="clearNumberBtn">⌫</button>
+          </div>
+        </div>
 
-<script src="sudoku.js"></script>
-</body>
+        <div id="overlay" class="overlay hidden">
+          <div class="overlay-card">
+            <h3 id="overlay-title">Well done!</h3>
+            <p id="overlay-text">You solved the Sudoku.</p>
+            <button id="overlayBtn" class="primary-btn">Play again</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+      });
+    </script>
+
+    <script src="sudoku.js"></script>
+  </body>
 </html>
-
-    

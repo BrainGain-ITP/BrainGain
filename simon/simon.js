@@ -19,30 +19,30 @@ const sounds = {
   green: new Audio("sounds/c.wav"),
   red: new Audio("sounds/d.wav"),
   yellow: new Audio("sounds/e.wav"),
-  blue: new Audio("sounds/g.wav")
+  blue: new Audio("sounds/g.wav"),
 };
 
 const levels = {
   easy: {
     rounds: 6,
     baseSpeed: 750,
-    text: "Beat 6 rounds to win."
+    text: "Beat 6 rounds to win.",
   },
   medium: {
     rounds: 12,
     baseSpeed: 620,
-    text: "Beat 12 rounds to win."
+    text: "Beat 12 rounds to win.",
   },
   hard: {
     rounds: 20,
     baseSpeed: 500,
-    text: "Beat 20 rounds to win."
+    text: "Beat 20 rounds to win.",
   },
   expert: {
     rounds: null,
     baseSpeed: 420,
-    text: "Endless mode. Play until you make a mistake."
-  }
+    text: "Endless mode. Play until you make a mistake.",
+  },
 };
 
 let sequence = [];
@@ -67,9 +67,12 @@ function activatePad(color) {
   pad.classList.add("active");
   resetAudio(sounds[color]);
 
-  setTimeout(() => {
-    pad.classList.remove("active");
-  }, Math.max(220, currentSpeed * 0.55));
+  setTimeout(
+    () => {
+      pad.classList.remove("active");
+    },
+    Math.max(220, currentSpeed * 0.55),
+  );
 }
 
 function disablePads() {
@@ -118,8 +121,7 @@ function showGame() {
   setupPanel.classList.add("hidden");
   playPanel.classList.remove("hidden");
 
-  modeLabel.textContent =
-    `${selectedLevel.charAt(0).toUpperCase() + selectedLevel.slice(1)} mode`;
+  modeLabel.textContent = `${selectedLevel.charAt(0).toUpperCase() + selectedLevel.slice(1)} mode`;
 }
 
 function setSelectedLevel(levelKey) {
@@ -176,12 +178,15 @@ function playSequence() {
     }, index * currentSpeed);
   });
 
-  setTimeout(() => {
-    isPlaying = false;
-    if (gameActive) {
-      enablePads();
-    }
-  }, sequence.length * currentSpeed + 120);
+  setTimeout(
+    () => {
+      isPlaying = false;
+      if (gameActive) {
+        enablePads();
+      }
+    },
+    sequence.length * currentSpeed + 120,
+  );
 }
 
 function loseGame() {
