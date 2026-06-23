@@ -3,6 +3,7 @@
 :root {
 	--bg: #070716;
 	--card-bg: rgba(255, 255, 255, 0.08);
+	--overlay-bg: rgba(10, 10, 10, 0.5);
 	--card-border: rgba(255, 255, 255, 0.14);
 	--text: #ffffff;
 	--muted: #b8b8c8;
@@ -292,7 +293,7 @@ body {
 	max-width: 360px;
 	padding: 28px 22px;
 	text-align: center;
-	background: var(--card-bg);
+	background: var(--overlay-bg);
 	border: 1px solid var(--card-border);
 	border-radius: 22px;
 	box-shadow: 0 22px 50px rgba(0, 0, 0, 0.32);
