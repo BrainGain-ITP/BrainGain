@@ -1,4 +1,6 @@
-/* MEMORY GRID */
+/* ============================================================
+   MEMORY – GRID
+   ============================================================ */
 
 .memory-grid {
 	display: grid;
@@ -7,7 +9,9 @@
 	margin-top: 10px;
 }
 
-/* CARD */
+/* ============================================================
+   MEMORY – CARD
+   ============================================================ */
 
 .memory-card {
 	width: 100%;
@@ -19,7 +23,7 @@
 	border: none;
 	padding: 0;
 	cursor: pointer;
-	transition: transform 0.25s ease;
+	transition: transform var(--transition);
 }
 
 .memory-card:hover {
@@ -53,12 +57,12 @@
 }
 
 .memory-card-front {
-	background: rgba(255, 255, 255, 0.08);
+	background: var(--card-bg);
 	border: 1px solid var(--card-border);
 }
 
 .memory-card-back {
-	background: linear-gradient(135deg, var(--purple), var(--cyan));
+	background: var(--gradient-brand);
 	color: #ffffff;
 	transform: rotateY(180deg);
 	font-size: 3rem;
@@ -67,10 +71,11 @@
 
 .memory-card.matched .memory-card-back {
 	background: linear-gradient(135deg, #22d3ee, #8b5cf6);
-	border: none;
 }
 
-/* ANIMATION */
+/* ============================================================
+   ANIMATION
+   ============================================================ */
 
 @keyframes fadeIn {
 	from {
@@ -84,7 +89,9 @@
 	}
 }
 
-/* TABLET */
+/* ============================================================
+   TABLET
+   ============================================================ */
 
 @media (max-width: 900px) {
 	.memory-card {
@@ -96,78 +103,11 @@
 	}
 }
 
-/* MOBILE */
+/* ============================================================
+   MOBILE
+   ============================================================ */
 
 @media (max-width: 700px) {
-
-	html,
-	body {
-		width: 100%;
-		min-height: 100%;
-		overflow-x: hidden;
-	}
-
-	body {
-		min-height: 100dvh;
-		overflow-y: auto;
-	}
-
-	.game-page {
-		min-height: calc(100dvh - 110px);
-		padding: 10px;
-		overflow: visible;
-	}
-
-	.game-card {
-		width: 100%;
-		padding: 18px 12px 22px;
-		overflow: visible;
-	}
-
-	.game-card h2 {
-		display: block;
-		font-size: 1.9rem;
-		line-height: 1.1;
-		margin-bottom: 8px;
-	}
-
-	.game-card > p {
-		display: block;
-		font-size: 0.9rem;
-		line-height: 1.35;
-		margin-bottom: 10px;
-	}
-
-	.difficulty-buttons {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		margin: 10px 0 12px;
-		gap: 8px;
-	}
-
-	.level-btn {
-		padding: 9px 15px;
-		font-size: 0.85rem;
-		white-space: nowrap;
-	}
-
-	.game-info {
-		margin: 8px 0 14px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 8px;
-		flex-wrap: wrap;
-	}
-
-	.game-info span,
-	#restartBtn {
-		padding: 8px 12px;
-		font-size: 0.85rem;
-		white-space: nowrap;
-	}
-
 	.memory-grid {
 		gap: 7px;
 		margin-top: 0;
@@ -189,45 +129,6 @@
 }
 
 @media (max-width: 390px) {
-	.game-page {
-		padding: 8px;
-	}
-
-	.game-card {
-		padding: 14px 10px 18px;
-	}
-
-	.game-card h2 {
-		font-size: 1.65rem;
-		margin-bottom: 6px;
-	}
-
-	.game-card > p {
-		font-size: 0.78rem;
-		margin-bottom: 8px;
-	}
-
-	.difficulty-buttons {
-		gap: 6px;
-		margin: 8px 0 10px;
-	}
-
-	.level-btn {
-		padding: 7px 11px;
-		font-size: 0.75rem;
-	}
-
-	.game-info {
-		gap: 6px;
-		margin: 6px 0 10px;
-	}
-
-	.game-info span,
-	#restartBtn {
-		padding: 7px 9px;
-		font-size: 0.75rem;
-	}
-
 	.memory-grid {
 		gap: 6px;
 	}
