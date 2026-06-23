@@ -24,19 +24,6 @@
 		0 12px 35px rgba(0, 0, 0, 0.32);
 }
 
-/* GAME CARD */
-
-.game-card {
-	background: #1a1a1a;
-	border-radius: 18px;
-	padding: 30px 20px;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-.game-card p {
-	color: #bdbdbd;
-}
-
 /* COLOR PAD */
 
 .pad {
