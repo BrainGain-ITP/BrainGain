@@ -1,3 +1,31 @@
+/* SIMON BOARD */
+
+.simon-board {
+	width: 320px;
+	height: 320px;
+	margin: 0 auto;
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 5px;
+	padding: 5px;
+	border-radius: 50%;
+	border: 2px solid transparent;
+	
+	background: rgba(10, 10, 25, 0.55);
+	background-image:
+		linear-gradient(rgba(10, 10, 25, 0.75), rgba(10, 10, 25, 0.75)),
+		linear-gradient(135deg,
+			rgba(139, 92, 246, 0.45),
+			rgba(34, 211, 238, 0.35));
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	box-shadow:
+		0 12px 35px rgba(0, 0, 0, 0.32);
+}
+
+/* GAME CARD */
+
 .game-card {
 	background: #1a1a1a;
 	border-radius: 18px;
@@ -9,28 +37,7 @@
 	color: #bdbdbd;
 }
 
-.simon-board {
-	width: 320px;
-	height: 320px;
-	margin: 0 auto;
-	position: relative;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 5px;
-	background: rgba(10, 10, 25, 0.55);
-	border-radius: 50%;
-	padding: 5px;
-	border: 2px solid transparent;
-	background-image:
-		linear-gradient(rgba(10, 10, 25, 0.75), rgba(10, 10, 25, 0.75)),
-		linear-gradient(135deg,
-			rgba(139, 92, 246, 0.45),
-			rgba(34, 211, 238, 0.35));
-	background-origin: border-box;
-	background-clip: padding-box, border-box;
-	box-shadow:
-		0 12px 35px rgba(0, 0, 0, 0.32);
-}
+/* COLOR PAD */
 
 .pad {
 	border: 2px solid rgba(255, 255, 255, 0.12);
@@ -109,6 +116,8 @@
 	pointer-events: none;
 }
 
+/* CENTER */
+
 .center-display {
 	position: absolute;
 	top: 50%;
@@ -129,17 +138,13 @@
 			rgba(50, 35, 63, 0.98));
 
 	border-radius: 50%;
-
 	border: 1px solid rgba(255, 255, 255, 0.08);
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-
 	box-shadow:
 		inset 0 1px 8px rgba(255, 255, 255, 0.05),
 		0 8px 20px rgba(0, 0, 0, 0.35);
@@ -159,7 +164,8 @@
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	font-weight: 700;
-
+	
+	color: var(--muted);
 	background: linear-gradient(90deg, #c4b5fd, #93c5fd, #22d3ee);
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -177,9 +183,7 @@
 	-webkit-text-fill-color: transparent;
 }
 
-.center-label {
-	color: var(--muted);
-}
+/* MOBILE */
 
 @media (max-width: 700px) {
 	.game-card {

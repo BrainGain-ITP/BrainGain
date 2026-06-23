@@ -34,6 +34,7 @@ body {
 }
 
 /* HEADER */
+
 .header {
 	width: 100%;
 	padding: 20px;
@@ -71,6 +72,7 @@ body {
 }
 
 /* NAVBAR */
+
 .nav {
 	/*position: sticky;*/
 	top: 0;
@@ -130,6 +132,7 @@ body {
 }
 
 /* GAME PAGE */
+
 .game-page {
 	min-height: calc(100dvh - 65px);
 	padding: 55px 20px 90px;
@@ -147,20 +150,12 @@ body {
 
 /* BUTTONS */
 
-.difficulty-buttons, .game-actions {
+.difficulty-buttons, .action-buttons {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin: 22px 0 14px;
+	margin: 22px 0 20px;
 	gap: 12px;
-}
-
-.action-buttons {
-	display: flex;
-	justify-content: center;
-	gap: 12px;
-	flex-wrap: wrap;
-	margin-bottom: 20px;
 }
 
 .level-btn,
@@ -230,6 +225,7 @@ body {
 }
 
 /* GAME CARD */
+
 .game-card {
 	width: 100%;
 	max-width: 1000px;
@@ -276,6 +272,7 @@ body {
 }
 
 /* OVERLAY */
+
 .overlay {
 	position: absolute !important;
 	inset: 0;
@@ -321,6 +318,7 @@ body {
 }
 
 /* CARDS CONTAINER */
+
 .container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -331,6 +329,7 @@ body {
 }
 
 /* CARD */
+
 .card {
 	position: relative;
 	overflow: hidden;
@@ -413,6 +412,7 @@ body {
 }
 
 /* BUTTON */
+
 .play-btn {
 	display: inline-block;
 	margin-top: 25px;
@@ -434,6 +434,7 @@ body {
 }
 
 /* FOOTER */
+
 .footer {
 	text-align: center;
 	padding: 25px 20px;
@@ -459,6 +460,7 @@ body {
 }
 
 /* MOBILE */
+
 @media (max-width: 600px) {
 	.header {
 		padding: 42px 16px 25px;

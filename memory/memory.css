@@ -1,6 +1,4 @@
-/* =========================
-   MEMORY GRID
-========================= */
+/* MEMORY GRID */
 
 .memory-grid {
 	display: grid;
@@ -8,6 +6,8 @@
 	justify-content: center;
 	margin-top: 10px;
 }
+
+/* CARD */
 
 .memory-card {
 	width: 100%;
@@ -70,10 +70,7 @@
 	border: none;
 }
 
-
-/* =========================
-   ANIMATION
-========================= */
+/* ANIMATION */
 
 @keyframes fadeIn {
 	from {
@@ -87,10 +84,7 @@
 	}
 }
 
-
-/* =========================
-   TABLET
-========================= */
+/* TABLET */
 
 @media (max-width: 900px) {
 	.memory-card {
@@ -102,10 +96,7 @@
 	}
 }
 
-
-/* =========================
-   MOBILE FIT 
-========================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
